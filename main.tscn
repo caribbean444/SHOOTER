@@ -13,7 +13,7 @@ position = Vector2( 217.924, 493.883 )
 scale = Vector2( 1, 1.22707 )
 
 [node name="Meteor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 249.513, 143.817 )
+position = Vector2( 81.513, 70.817 )
 
 [node name="Meteor2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 377.947, 105.763 )
