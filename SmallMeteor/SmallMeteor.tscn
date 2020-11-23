@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SmallMeteor/SmallMeteor.gd" type="Script" id=1]
+[ext_resource path="res://Textures/meteorSmall.png" type="Texture" id=2]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="meteorSmall" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0.74474, 0.558708 )
+scale = Vector2( 0.977477, 0.994213 )
+polygon = PoolVector2Array( -20.985, 8.06982, -15.3664, -18.1506, 11.2286, -20.7726, 20.593, 1.70201, 0.365845, 19.6817 )

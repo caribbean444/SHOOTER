@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Meteor/Meteor.gd" type="Script" id=1]
 [ext_resource path="res://Textures/meteorBig.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 43, 32.714 )
 
 [node name="Meteor" type="Area2D"]
 script = ExtResource( 1 )
@@ -13,5 +10,5 @@ script = ExtResource( 1 )
 scale = Vector2( 0.580882, 0.576577 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -13.8649, 15.1273, -31.3263, 14.7304, -38.8665, -3.52469, -25.3736, -22.5735, 8.3587, -30.9073, 33.3603, -9.8743, 38.5193, 16.3178, 38.1225, 16.7147, 8.75555, 31.0013 )
