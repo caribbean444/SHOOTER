@@ -1,11 +1,10 @@
-extends Area2D
+extends KinematicBody2D
 
-onready var animatedSprite = $AnimatedSpite
 
-var speed: float = 350
+var speed: float = 450
 var life: int = 3
 var vel := Vector2(0, 0)
-
+onready var animation = $AnimationPlayer
 
 
 func _physics_process(delta):
@@ -25,3 +24,12 @@ func _physics_process(delta):
 	var viewRect := get_viewport_rect()
 	position.x = clamp(position.x, 0, viewRect.size.x)
 	position.y = clamp(position.y, 325, viewRect.size.y)
+	
+	
+	if vel.x < 0:
+		animation.play("Left")
+	elif vel.x > 0:
+		animation.play("Right")
+	else:
+		animation.play("Stop")
+
