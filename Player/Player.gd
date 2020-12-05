@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 
 var speed: float = 450
@@ -32,4 +32,17 @@ func _physics_process(delta):
 		animation.play("Right")
 	else:
 		animation.play("Stop")
+
+func damage(amount: int):
+	life -= amount
+	
+
+func _process(delta):
+	if life == 0:
+		queue_free()
+
+func _on_Player_area_entered(area):
+	if area.is_in_group("damageable"):
+		area.queue_free()
+		life -= 1
 

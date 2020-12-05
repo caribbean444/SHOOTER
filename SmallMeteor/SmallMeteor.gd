@@ -8,7 +8,7 @@ var maxSpeed_y: float = 50
 var minRotationRate: float = -40
 var maxRotationRate: float = 40
 
-var live: int = 5
+var life: int = 20
 var speed_y: float = 0
 var rotationRate: float = 0
 var speed_x: float = 0
@@ -26,3 +26,11 @@ func _physics_process(delta):
 
 func _on_VisibilityNotifier2D_screen_exit():
 	queue_free()
+
+func damage(amount: int):
+	if life <= 0: 
+		return
+	
+	life -= amount 
+	if life <= 0:
+		queue_free()

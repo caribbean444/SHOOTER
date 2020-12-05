@@ -7,16 +7,15 @@
 [ext_resource path="res://Animation/Right.tres" type="Animation" id=5]
 [ext_resource path="res://Animation/Stop.tres" type="Animation" id=6]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="player_sheet" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
-frame = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 0, 1.25992 )
+position = Vector2( -3.92862, 0.698686 )
 polygon = PoolVector2Array( -48.3723, -8.85455, -45.0688, -7.43875, -44.1249, -3.19131, -37.5178, -0.831619, -12.5051, -13.102, -10.6174, -39.5305, 7.78818, -39.5305, 11.0917, -14.0459, 33.7447, -0.831619, 39.408, -1.7755, 43.1835, -8.38261, 48.3748, -9.32649, 46.0151, 22.2933, 41.7677, 22.7652, 40.3518, 18.0459, 35.6325, 22.2933, 12.0356, 26.0688, 6.8443, 35.5075, -7.31381, 36.4514, -15.3367, 25.1249, -41.7652, 19.4617, -42.7091, 22.2933, -46.9565, 22.7652, -47.9004, 21.8214 )
 
 [node name="Blaster" type="Node2D" parent="."]
@@ -31,3 +30,4 @@ one_shot = true
 anims/Left = ExtResource( 4 )
 anims/Right = ExtResource( 5 )
 anims/Stop = ExtResource( 6 )
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
